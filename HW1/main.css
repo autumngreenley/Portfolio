@@ -46,12 +46,20 @@ img.logo{
     border-width:0px;
     padding-bottom: 20px;
 }
-    
+
+ul{
+    min-width:30%;
+    max-height:10%;
+}
+
+li{
+    max-height:5%;
+}
+
 li.navbar {
     float: left;
-    display: block;
+    display: inline-table;
     list-style-type: none;
-    overflow: hidden;
     
     margin: 5px;
     padding: 5px;
@@ -72,7 +80,6 @@ li.active {
     float: left;
     display: block;
     list-style-type: none;
-    overflow: hidden;
     
     margin: 5px;
     padding: 5px;
@@ -90,7 +97,7 @@ li.active {
 }
 
 div.manilla{
-    margin-top: 56px;
+    margin-top: 55px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.26);
     background-color: #ffe884;
