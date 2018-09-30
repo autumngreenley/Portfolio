@@ -6,6 +6,9 @@
         <title>Blog #1</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="A portfolio page for Autumn Greenley">
+        <link rel="icon" 
+      type="image/png" 
+      href="images/TriangleIcon.ico">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css">
     </head>
@@ -16,14 +19,16 @@
                     <h1 align="center">Blog #1</h1>
 
                     <p>
-                        This is a blog post for Homework Assignment #1.
+                        This is a Blog Post for Homework Assignment #1.
                         
                         <br>
-                        <a href="HW1/about.html" target="_blank">Demo</a>
+                        This is a <a href="HW1/about.html" target="_blank">Demo</a> for Homework Assignment #1
                         <br>
-                        <a href="https://github.com/autumngreenley/portfolio" target="_blank">Repo</a>
+                        This is a <a href="https://github.com/autumngreenley/portfolio" target="_blank">Repo</a> for Homework Assignment #1
                         <br>
                     </p>
+                    
+                    <hr>
                     
                     <!--Setting up Git-->
                     <h3>
@@ -61,8 +66,11 @@ git status
                     <h3>
                         Getting Down the Base Page
                     </h3>
+                    
+                    <img src="images/thumb.jpg" width="500">
+                    
                     <p>
-                        I made a basic sketch of the sort of page design I was thinking of before looking at the code much. I thought it would be cool to sort of make it look like pages in a manilla folder, but when I started putting it in the computer, I realized that a page on a folder would be kind of busy and overall have too many frames.
+                        I made a basic sketch of the sort of page design I was thinking of before looking at the code much. I thought it would be cool to sort of make it look like pages in a manilla folder, but when I started putting it in the computer and adjusting things, I decided that a page on a folder would be kind of busy and overall have too many frames.
                     </p>
                     <p>
                         Knowing the shape of things, I went ahead and started implementing the basis of it. As most people do (probably), I tend to start with the most notable aspects and work down from there. So I decided to work with the central concept of the base folder bit with the tabs to represent, well, tabs/pages.
@@ -97,7 +105,7 @@ git status
                    <h2>CSS</h2>
                     <p>Most of the heavy lifting was in the css.</p>
                     
-                    <pre><code>div.manilla{
+                    <pre><code class="pre-scrollable">div.manilla{
     margin-top: 55px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.26);
@@ -148,6 +156,10 @@ li.active {
                     <p>
                         Otherwise, everything was just variations on basic HTML and CSS. I did learn a cool trick though vis a vis css backgrounds. I didn't realize there was a built in gradient function for backgrounds (<code>background-image:linear-gradient(to bottom, #e6ffe9, #f7fff8);</code> makes a nice subtle light-green to lighter-green gradient the background, as seen on this page)
                     </p>
+                    
+                    <p>In the end, this is what I wound up with:</p>
+                    
+                    <img src="images/DemoSS.PNG" width="500">
                     
                     <!--Navigate back to the portfolio-->
                     <hr>
