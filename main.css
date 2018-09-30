@@ -5,6 +5,12 @@ html {
     background-image:linear-gradient(to bottom, #e6ffe9, #f7fff8);
 }
 
+pre {
+    background: #EEE;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 body {
     background: #fff;
     border-radius: 10px;

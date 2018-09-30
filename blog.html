@@ -24,10 +24,137 @@
                         <a href="https://github.com/autumngreenley/portfolio" target="_blank">Repo</a>
                         <br>
                     </p>
+                    
+                    <!--Setting up Git-->
+                    <h3>
+                        Setting up Git
+                    </h3>
+                    <p>
+                        So, the first thing I had to do when starting this assignment was to doublecheck my settings with Git. I had previously had a Git account, so I didn't need to make a new one. I evidently still had the command line version installed, so I went ahead and just jumped right into that.
+                    </p>
+                    <p>
+                        I was always a little unclear on how to use Git, but listening in in class helped clear stuff up. So I set up the local folder.
+                    </p>
+                    <pre><code>cd Documents/HW/Git
+git init
+git add *
+git commit
+git push -u origin master</code></pre>
+                    <p>I guess I like doing things the long way, but in the future I should probably just use
+                    
+                    <code>
+                        git commit -m "This is my commit message"
+                    </code>
+                    
+                    instead of manually writing it out in vim.</p>
+                    <p>
+                        Admittedly, I had a little bit of foolery where I didn't set the folders up right the first time between the local and remote repo, so I ended up having to merge things once or twice. It wasn't too hard to clear up, but I forgot to document exactly what went down. It probably had to do with not pulling the remote repo first so I had some conflicts with the README file.
+                    </p>
+                    <p>
+                        So, in the future,<br>
+                   </p>
+                    <pre><code>git pull
+git status
+...</code></pre>
+                   
+                    <!--Base HTML-->
+                    <h3>
+                        Getting Down the Base Page
+                    </h3>
+                    <p>
+                        I made a basic sketch of the sort of page design I was thinking of before looking at the code much. I thought it would be cool to sort of make it look like pages in a manilla folder, but when I started putting it in the computer, I realized that a page on a folder would be kind of busy and overall have too many frames.
+                    </p>
+                    <p>
+                        Knowing the shape of things, I went ahead and started implementing the basis of it. As most people do (probably), I tend to start with the most notable aspects and work down from there. So I decided to work with the central concept of the base folder bit with the tabs to represent, well, tabs/pages.
+                    </p>
+                    <p>
+                        I started by making a 'manilla' class in my html. By default, I had every body or whatever that had some sort of background color having a bit of a rounded edge already, since that's modern, but for the tabs I went ahead and made the bottom squared off so it could 'attach' more cleanly. I also messed with the colors a little to give it an illusion of depth.
+                    </p>
+                    
+                   <p>I also added a basic single column layout with Bootstrap. This is the main page:</p>
+                                  
+                    <pre><code class="pre-scrollable">&lt;div class="manilla">
+    &lt;div class="container">
+        &lt;div class="row">
+            &lt;div class="col-md-12">
+                &lt;img class="rounded-circle" src="../images/Screenshot.png" width="350" >
+                &lt;h2>About Me&lt;/h2>
+                &lt;p>
+                    ...
+                &lt;/p>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div></code></pre>
+                    
+                    <p>and this was the navbar. I ended up having two classes (active and not-active, basically) so that the active tab would be displayed differently than the others.</p>
+                    <pre><code>&lt;ul>
+    &lt;li class="active">Home&lt;/li>
+    &lt;a href="games.html">&lt;li class="navbar">Games&lt;/li>&lt;/a>
+    &lt;a href="orgs.html">&lt;li class="navbar">Organizations&lt;/li>&lt;/a>
+&lt;/ul></code></pre>
+                   <!--CSS-->
+                   <h2>CSS</h2>
+                    <p>Most of the heavy lifting was in the css.</p>
+                    
+                    <pre><code>div.manilla{
+    margin-top: 55px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.26);
+    background-color: #ffe884;
+    padding: 30px 30px 30px;
+}
+                    
+li.navbar {
+    float: left;
+    display: inline-table;
+    list-style-type: none;
+    
+    margin: 5px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 17px;
+    background-color: #e5d072;
+    
+    border-top-left-radius: 6px;
+    border-top-right-radius:6px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: #e5d072;
+}
+
+li.active {
+    ...
+    background-color: #ffe884;
+    ...
+    border-bottom-color: #ffe884;
+}</code></pre>
+                    
+                    <p>
+                        Otherwise, I didn't have very many other things to mess with. I filled in the other pages similarly, using little bits and pieces that were required (lists, a table, etc). Some of the more notable things were probably...
+                    </p>
+                    
+                    <h5>A table</h5>
+                    <p>
+                        I made a table that was semi-responsive (<code>&lt;table class="table-responsive-sm"></code>) so that when the page is narrow it uses a scrollbar instead of just overflowing over the side.
+                    </p>
+                    <h5>A two-column layout</h5>
+                    <p>
+                        Utilizing Bootstrap, I made a two-columned page (using <code>&lt;div class="col-md-6"></code> instead of <code>&lt;div class="col-md-12"></code>, bearing in mind that the total number should add up to 12).
+                    </p>
+                    
+                    <p>
+                        Otherwise, everything was just variations on basic HTML and CSS. I did learn a cool trick though vis a vis css backgrounds. I didn't realize there was a built in gradient function for backgrounds (<code>background-image:linear-gradient(to bottom, #e6ffe9, #f7fff8);</code> makes a nice subtle light-green to lighter-green gradient the background, as seen on this page)
+                    </p>
+                    
+                    <!--Navigate back to the portfolio-->
                     <hr>
                     <p>
                         <a href="index.html"> back to the portfolio</a>
                     </p>
+                    
                 </div>
             </div>
         </div>
