@@ -58,7 +58,7 @@ li.navbar {
     padding-left: 20px;
     padding-right: 20px;
     font-size: 17px;
-    background-color: #ffe884;
+    background-color: #e5d072;
     
     border-top-left-radius: 6px;
     border-top-right-radius:6px;
@@ -94,5 +94,5 @@ div.manilla{
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.26);
     background-color: #ffe884;
-    padding: 0em 2em 2em
+    padding: 30px 30px 30px;
 }
