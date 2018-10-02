@@ -6,6 +6,7 @@
         <title>Blog #1</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="A portfolio page for Autumn Greenley">
+        <link href="prism.css" rel="stylesheet" />
         <link rel="icon" 
       type="image/png" 
       href="images/TriangleIcon.ico">
@@ -40,14 +41,16 @@
                     <p>
                         I was always a little unclear on how to use Git, but listening in in class helped clear stuff up. So I set up the local folder.
                     </p>
-                    <pre><code>cd Documents/HW/Git
-git init
-git add *
-git commit
-git push -u origin master</code></pre>
+                    <pre><code class="language-git">
+                        cd Documents/HW/Git
+                        git init
+                        git add *
+                        git commit
+                        git push -u origin master
+                    </code></pre>
                     <p>I guess I like doing things the long way, but in the future I should probably just use
                     
-                    <code>
+                    <code class="language-git">
                         git commit -m "This is my commit message"
                     </code>
                     
@@ -58,9 +61,11 @@ git push -u origin master</code></pre>
                     <p>
                         So, in the future,<br>
                    </p>
-                    <pre><code>git pull
-git status
-...</code></pre>
+                    <pre><code class="language-git" >
+                        git pull
+                        git status
+                        ...
+                    </code></pre>
                    
                     <!--Base HTML-->
                     <h3>
@@ -81,64 +86,70 @@ git status
                     
                    <p>I also added a basic single column layout with Bootstrap. This is the main page:</p>
                                   
-                    <pre><code class="pre-scrollable">&lt;div class="manilla">
-    &lt;div class="container">
-        &lt;div class="row">
-            &lt;div class="col-md-12">
-                &lt;img class="rounded-circle" src="../images/Screenshot.png" width="350" >
-                &lt;h2>About Me&lt;/h2>
-                &lt;p>
-                    ...
-                &lt;/p>
-            &lt;/div>
-        &lt;/div>
-    &lt;/div>
-&lt;/div></code></pre>
+                    <pre><code class="language-html">
+                        &lt;div class="manilla">
+                            &lt;div class="container">
+                                &lt;div class="row">
+                                    &lt;div class="col-md-12">
+                                        &lt;img class="rounded-circle" src="../images/Screenshot.png" width="350" >
+                                        &lt;h2>About Me&lt;/h2>
+                                        &lt;p>
+                                            ...
+                                        &lt;/p>
+                                    &lt;/div>
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                        </code></pre>
                     
                     <p>and this was the navbar. I ended up having two classes (active and not-active, basically) so that the active tab would be displayed differently than the others.</p>
-                    <pre><code>&lt;ul>
-    &lt;li class="active">Home&lt;/li>
-    &lt;a href="games.html">&lt;li class="navbar">Games&lt;/li>&lt;/a>
-    &lt;a href="orgs.html">&lt;li class="navbar">Organizations&lt;/li>&lt;/a>
-&lt;/ul></code></pre>
+                    <pre><code class="language-html">
+                        &lt;ul>
+                            &lt;li class="active">Home&lt;/li>
+                            &lt;a href="games.html">&lt;li class="navbar">Games&lt;/li>&lt;/a>
+                            &lt;a href="orgs.html">&lt;li class="navbar">Organizations&lt;/li>&lt;/a>
+                        &lt;/ul>
+                    </code></pre>
                    <!--CSS-->
                    <h2>CSS</h2>
                     <p>Most of the heavy lifting was in the css.</p>
                     
-                    <pre><code class="pre-scrollable">div.manilla{
-    margin-top: 55px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.26);
-    background-color: #ffe884;
-    padding: 30px 30px 30px;
-}
-                    
-li.navbar {
-    float: left;
-    display: inline-table;
-    list-style-type: none;
-    
-    margin: 5px;
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 17px;
-    background-color: #e5d072;
-    
-    border-top-left-radius: 6px;
-    border-top-right-radius:6px;
-    border-style: solid;
-    border-width: 0px;
-    border-bottom-width: 1px;
-    border-bottom-color: #e5d072;
-}
+                    <pre><code class="language-css">
+                        div.manilla{
+                            margin-top: 55px;
+                            border-radius: 10px;
+                            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.26);
+                            background-color: #ffe884;
+                            padding: 30px 30px 30px;
+                        }
 
-li.active {
-    ...
-    background-color: #ffe884;
-    ...
-    border-bottom-color: #ffe884;
-}</code></pre>
+                        li.navbar {
+                            float: left;
+                            display: inline-table;
+                            list-style-type: none;
+
+                            margin: 5px;
+                            padding: 5px;
+                            padding-left: 20px;
+                            padding-right: 20px;
+                            font-size: 17px;
+                            background-color: #e5d072;
+
+                            border-top-left-radius: 6px;
+                            border-top-right-radius:6px;
+                            border-style: solid;
+                            border-width: 0px;
+                            border-bottom-width: 1px;
+                            border-bottom-color: #e5d072;
+                        }
+
+                        li.active {
+                            ...
+                            background-color: #ffe884;
+                            ...
+                            border-bottom-color: #ffe884;
+                        }
+                   </code></pre>
                     
                     <p>
                         Otherwise, I didn't have very many other things to mess with. I filled in the other pages similarly, using little bits and pieces that were required (lists, a table, etc). Some of the more notable things were probably...
@@ -146,15 +157,15 @@ li.active {
                     
                     <h5>A table</h5>
                     <p>
-                        I made a table that was semi-responsive (<code>&lt;table class="table-responsive-sm"></code>) so that when the page is narrow it uses a scrollbar instead of just overflowing over the side.
+                        I made a table that was semi-responsive (<code class="language-html">&lt;table class="table-responsive-sm"></code>) so that when the page is narrow it uses a scrollbar instead of just overflowing over the side.
                     </p>
                     <h5>A two-column layout</h5>
                     <p>
-                        Utilizing Bootstrap, I made a two-columned page (using <code>&lt;div class="col-md-6"></code> instead of <code>&lt;div class="col-md-12"></code>, bearing in mind that the total number should add up to 12).
+                        Utilizing Bootstrap, I made a two-columned page (using <code class="language-html">&lt;div class="col-md-6"></code> instead of <code class="language-html">&lt;div class="col-md-12"></code>, bearing in mind that the total number should add up to 12).
                     </p>
                     
                     <p>
-                        Otherwise, everything was just variations on basic HTML and CSS. I did learn a cool trick though vis a vis css backgrounds. I didn't realize there was a built in gradient function for backgrounds (<code>background-image:linear-gradient(to bottom, #e6ffe9, #f7fff8);</code> makes a nice subtle light-green to lighter-green gradient the background, as seen on this page)
+                        Otherwise, everything was just variations on basic HTML and CSS. I did learn a cool trick though vis a vis css backgrounds. I didn't realize there was a built in gradient function for backgrounds (<code class="language-css">background-image:linear-gradient(to bottom, #e6ffe9, #f7fff8);</code> makes a nice subtle light-green to lighter-green gradient the background, as seen on this page)
                     </p>
                     
                     <p>In the end, this is what I wound up with:</p>
@@ -171,6 +182,8 @@ li.active {
             </div>
         </div>
         
+        
+        <script src="prism.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
