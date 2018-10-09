@@ -41,6 +41,12 @@
                     <p>
                         In the end, I finally decided to just do something a little gimmicky. I thought about just adding some riddles that the user could 'solve' on my site. It gave me some ideas for how to use the javascript, plus I figured finding riddles online to use would be fairly easy. I knew that I wanted a system where the user would be able to get hints of some kind, otherwise trying to solve them could just be annoying. So I did some sketches about what I was envisioning.
                     </p>
+                    
+                    <img src="images/sketch.jpg" width=500px>
+                    
+                    <p>
+                        Nothing too complicated - I don't need multiple columns and I was figuring it'd just be a top down design. The different elements are fairly modular and can be divided into, essentially, the riddle selector, the hint box, and the riddle itself.
+                    </p>
                    
                     <!--Setting up the HTML-->
                     <h3>
@@ -52,12 +58,20 @@
                     </p>
                     
                     <p>
-                        I ended up using a dropdown box, a text input field, and a radio bullet list (as well as a submit button). I figured this covered the range of possible form stuff pretty well. In the beginning, since I wanted to get the base for everything done before I started messing with javascript, I had the two riddles typed out (stolen from the videogame series Professor Layton) and formatted early on, despite my intention for only one to be showing at a time.
+                        I ended up using a dropdown box, a text input field, and a radio bullet list (as well as a submit button). I figured this covered the range of possible form stuff pretty well. In the beginning, since I wanted to get the base for everything done before I started messing with javascript, I had the two riddles typed out (stolen from the videogame series Professor Layton, which conveniently had hints in the format I wanted anyways) and formatted early on, despite my intention for only one to be showing at a time.
+                    </p>
+                    <p>
+                        The forms aren't too difficult or weird, basically just an overarching form section plus subsections for different kinds of user input.
                     </p>
                     
                     <pre><code class="language-html">
-                        Blah
+                        &lt;form id="solution1">
+                            &lt;input type="text" id="answer1">&lt;br>
+                            &lt;input type="button" value="Check Solution" onclick="checksolution1()" class="submitanswer">
+                        &lt;/form>
                     </code></pre>
+                    
+                    <p>And the radio buttons are just <code class="language-html">&lt;input type="radio" id="a" name="riddle2" value="0">&lt;label for="a">"Label goes here"&lt;/label><br></code></p>.
                     
                     <p>
                         I also went through and added some css stuff to format the new stuff. I wasn't sure on how I wanted stuff to look quite yet, so I had a lot of filler colors and things along those lines for a while.
@@ -71,16 +85,103 @@
                         I start out by deciding which elements will be tackled how. I decide that the hint box makes sense to be one element that is modified by javascript, and that the riddles make sense to be elements that are created at runtime. I end up deciding to start with the hintbox, since that seems the most self contained.
                     </p>
                     <p>
-                        After the hintbox, I (kind of foolishly) decided to work on the riddle switcher next.
-                        
-                        I'm not sure if there was a more eloquent way to do it, and I ended up doubting how good of an idea it was to break it up like I did. I was hoping that I'd be able to just load in an .html file to avoid the whole 'no linebreaks' problem, but for now, this is the best I got. I found some stuff about a load() function, but I think I would have needed to add ajax in (which makes sense, but isn't what I was looking for).
+                        Sort of like with my navbar, I decided to go with the same sort of style for the hint box. An active tab with the same color background as the body of the text, then inactive tabs that are a little darker. It basically just functions like a small version of the navbar, except it modifies the contents with javascript instead of just going to a different page.
+                    </p>
+                    <pre><code class="language-html">
+                        &lt;button type="button" class="activehint" id="hint0" onclick="hint0active()">---->&lt;/button>
+                        &lt;button type="button" class="inactivehint" id="hint1" onclick="hint1active()">Hint #1&lt;/button>
+                        &lt;button type="button" class="inactivehint" id="hint2" onclick="hint2active()">Hint #2&lt;/button>
+                        &lt;button type="button" class="inactivehint" id="hint3" onclick="hint3active()">Hint #3&lt;/button>
+                        &lt;p class="hint">
+                            If you'd like a hint, press one of the buttons above.
+                        &lt;/p>
+                    </code></pre>
+                    <p>
+                        There was probably a... Better... Way to do the css, but this is what I did. Each individual hint had it's own function that was called when the button was pressed. It works, but it feels kinda goofy.
+                    </p>
+                    <pre><code class="language-javascript">
+                        function hint1active() {
+                            activetoinactive();
+                            $("#hint1").attr('class', 'activehint');
+                            $(".hint").html("&lt;b>Hint 1&lt;/b>&lt;br>Someone in a hurry might jump to the conclusion that you need to find the lowest common multiple between the three numbers.&lt;br>&lt;br>Read the problem over again and see if you can't clear things up for yourself.");
+                        }
+                    </code></pre>
+                    <p>
+                        After the hint box, I (kind of foolishly) decided to work on the riddle switcher next. I figured I'd just have a dropdown box, then whatever is selected at the time appears in the body. I planned on just basically adding a class below the dropdown box, then deleting it when the user changed the selection.
+                    </p>
+                    <p>    
+                        This worked well, technically. But, well... It was really, really, ugly.
+                    </p>
+                      
+                    <img src="images/uglyjs.PNG">
+                    
+                    <pre><code class="language-javascript">
+                        function selectriddle() {
+                            if($(".riddle").length){
+                                $(".riddle").remove();
+                            }
+
+                            if(document.getElementById("currentriddle").value=='riddle1'){
+                                $("#currentriddle").after("I showed an example of what's here above")
+                        }
+                    </code></pre>   
+                       
+                    <p> 
+                        I'm not sure if there was a more eloquent way to do it. I was hoping that I'd be able to just load in an .html file to avoid the whole 'no linebreaks' problem. I found some stuff about a load() function, but I think I would have needed to add ajax in (which makes sense, but isn't what I was looking for at the moment).
+                    </p>
+                    
+                    <!--Answer checking-->
+                    <p>
+                        I finished up by authenticating submitted answers. Obviously when the main concept of the page is riddles, being able to check if you're right or not is important. Thankfully this part is fairly straightforward, and mainly consisted of making sure my forms were set up correctly. My code ended up looking like this:
+                    </p>
+                    <pre><code class="language-javascript">
+                       if($("#rightorwrong").length){
+                            $("#rightorwrong").remove();
+                        }
+                        if($("#answer1").val() == '1'){
+                            $("#solution1").after("&lt;div id='rightorwrong'>&lt;br>&lt;p>&lt;b>You got it!&lt;/b>...&lt;/p>&lt;/div>")
+                        }else{
+                            $("#solution1").after("&lt;div id='rightorwrong'>&lt;br>&lt;p>Too bad!...&lt;/p>&lt;/div>")
+                        }
+                    </code></pre>
+                    <p>
+                        So basically I check if there's already a right/wrong response given (and if there is, delete it), then give the user feedback based on if their answer was right or not. In both cases I had, the answer was kind of '1', so it worked out basically the same either way.
                     </p>
                     <p>
-                        I (almost) finished up by authenticating submitted answers. Obviously when the main concept of the page is riddles, being able to check if you're right or not is important.
+                        Afterwards I polished things up a little bit, since there was still a lot of ugliness to be eradicated. Just minor css changes, like in the past. I decided bright blue maybe wasn't the color I was going for. Though I did figure out that to do css on input types you have to break the traditional format a little:
+                    </p>
+                    
+                    <pre><code class="language-css">
+                        input[type=button]{
+                            background-color:lightgrey;
+                            ...
+                        }
+                    </code></pre>
+                    
+                    <p>
+                        It's probably like, actually common knowledge. But needing to use square brackets and an equal sign took me a couple minutes to figure out.
                     </p>
                     <p>
-                        Afterwards I polished things up a little bit, since there was still a lot of ugliness to be eradicated.
+                        With everything said and done, this is what my page looked like (both with and without a riddle present)
                     </p>
+                    <img src="images/initialss.PNG" width=500px><img src="images/withriddle.PNG" width=500px>
+                    
+                    <h3>
+                        Merging on git
+                    </h3>
+                    <p>
+                        As a footnote, this assignment required working on a non-master branch in git. This wasn't particularly complicated. Basically you just make the new branch and switch to it (<code class="language-git">$ git checkout -b (branchname)</code>). When you're ready to merge back into master, then switch back to it and merge.
+                    </p>
+                    
+                    <pre><code class="language-git">
+                        $ git checkout master
+                        Switched to branch 'master'
+                        $ git merge js
+                    </code></pre>
+                    
+                    <p>It gives you a fun little graph, then you push the change and it finalizes it.</p>
+                    
+                    <img src="images/merge.PNG">
                     
                     <!--Navigate back to the portfolio-->
                     <hr>
