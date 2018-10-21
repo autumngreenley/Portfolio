@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Blog #4</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="A portfolio page for Autumn Greenley">
+        <link href="prism.css" rel="stylesheet" />
+        <link rel="icon" 
+      type="image/png" 
+      href="images/TriangleIcon.ico">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div="container">
+           <div="row">
+               <div="col-md-12">
+                    <h1 align="center">Blog #4</h1>
+
+                    <p>
+                        This is a Blog Post for Homework Assignment #4.
+                        
+                        <br>
+                        This will be a demo for Homework Assignment #3
+                        <br>
+                        This is a <a href="https://github.com/autumngreenley/460-Binary-Numbers/" target="_blank">Repo</a> for Homework Assignment #3
+                        <br>
+                    </p>
+                    
+                    <hr>
+                    
+                    <!--Java-->
+                    <h3>
+                        Compiling Java
+                    </h3>
+                    <p>
+                        This took way longer than it needed to. Evidently, early CS classes at Western are taught in Java. Meaning that by this point, pretty much everyone's good on their Java compiling setup. I've worked in Java before, but the last time was in 2012. Technically I knew the procedure for getting it to work, but it had been long enough that I had to poke around to get it to work again.
+                    </p>
+                    <p>
+                        Finally, after reinstalling the JDK, reestablishing path variables, and hooking up the magic-compilation-words to my code editor, I was able to compile the code. Like an hour in, and I was finally ready to literally look at the very base of what we had to do.
+                    </p>
+                   
+                    <!--VS-->
+                    <h3>
+                        Visual Studio
+                    </h3>
+                    
+                    <p>
+                        Speaking of things that took a long time... After Visual Studio finished installing, getting it up and running was at least simple. You make a new C# console project, and just go from there. It's convenient for things to like... Just compile. Without having to mess with it for ages. So that was nice!
+                    </p>
+                    
+                    <img src="images/vsscreenshot.PNG" alt="A screenshot of the base C# format given by Virtual Studio" width="500">
+                    
+                    <!--Refactoring-->
+                    <h3>Translating the Code</h3>
+                    <h5>Properties</h5>
+                    <p>
+                        The next step was to actually start translating the code over. As per the recommendation, I started with the Node class. This was fairly straightforward, but I knew that I needed to add in some properties. These mainly take the form of setters and getters.
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        public T Data
+                        {
+                            get { return data; }
+                            set { data = value; }
+                        }
+                    </code></pre>
+                    
+                    <h5>XML</h5>
+                    <p>
+                        The other most noticable initial thing was commenting using XML. Typing three ///'s automatically 'filled in' the format, which marked up comments in such a way that they had useful information.
+                    </p>
+                    <pre><code class="language-csharp">
+                        /// &lt;summary>
+                        /// Singly linked node object
+                        /// &lt;/summary>
+                        /// &lt;param name="data">What's in the node&lt;/param>
+                        /// &lt;param name="next">The next node in the linked list&lt;/param>
+                    </code></pre>
+                    
+                    <h5>Exceptions</h5>
+                    <p>
+                        Making the exceptions work wasn't too difficult, mainly just getting the formatting right.
+                    </p>
+                    <pre><code class="language-csharp">
+                        class QueueUnderflowException : Exception
+                        {
+                            public QueueUnderflowException()
+                            {}
+                            
+                            public QueueUnderflowException(string message): base(message)
+                            {}
+                        }
+                    </code></pre>
+                    
+                    <p>To call the exceptions, all you needed is a simple <code class="language-csharp">throw new NullReferenceException();</code>, or whatever exception you were trying to call.</p>
+                    
+                    <h5>Generics</h5>
+                    <p>
+                        In both Java and C#, it can be useful to employ 'generics'. Things like <code class="language-csharp">public Node&lt;T> next;</code>, where the 'T' is the generic. Basically it just means that it doesn't have to be any given data type. A node could contain an int, or it could contain a string, or it could contain any other sort of thing. It's proper to use them in data structures in most circumstances, since it helps keep the code more generalized.
+                    </p>
+                    
+                    <h5>Misc</h5>
+                    <p>
+                        It seemed a little hard to figure out the places where things should be different in the non-main files. It's kind of like one of those 'spot the difference' puzzles, where you need to figure out what minute things to change. Things like capitilazation and filenames (QueueInterface -> IQueue) are important, but difficult to spot sometimes. 
+                    </p>
+                    
+                    <h3>Results</h3>
+                    <p>
+                        Overall, this seemed fairly straightforward. Visual Studio was on the nose about suggesting the correct functions and other things related to what I was looking for, and when that didn't work, usually just consulting the C# documentation went pretty quick. After some brief testing, everything seemed to run smoothly.
+                    </p>
+                    
+                    <img src="images/ProgramRunning.PNG" width="500">
+                    <!--
+                    <pre><code class="language-html">
+                        &lt;form id="solution1">
+                            &lt;input type="text" id="answer1">&lt;br>
+                            &lt;input type="button" value="Check Solution" onclick="checksolution1()" class="submitanswer">
+                        &lt;/form>
+                    </code></pre>
+                    -->
+                    
+                   
+                    
+                    <!--Navigate back to the portfolio-->
+                    <hr>
+                    <p>
+                        <a href="index.html"> back to the portfolio</a>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        <script src="prism.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </body>
+</html>
