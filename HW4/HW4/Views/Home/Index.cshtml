@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Main";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" id="header">
+            <h1>CS460 Homework #4</h1>
+            <p>
+                A few forms and some simple server side logic - learning the basics of GET, 
+                POST, query strings, form data, and the handling of it all from an ASP.NET 
+                MVC 5 application.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h4>Mile to Metric Converter</h4>
+            <p>
+                Want to know how many mililiters there are in 26.2 miles? This calculator is
+                for you. Uses query strings to send data to the server, which performs the calculation
+                and returns the answer in the requested form.
+            </p>
+
+            @Html.ActionLink("Try it out!", "MileToMetric", "Home")
+        </div>
+        <div class="col-md-6">
+            <h4>Color Chooser</h4>
+            <p>
+                Typical online color choosers are way too useful. We wanted something fun and
+                completely useless. This form POST's the data to the server.
+            </p>
+
+            @Html.ActionLink("Try it out!", "ColorChooser", "Home")
+        </div>
+    </div>
+</div>
+
