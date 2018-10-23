@@ -20,8 +20,7 @@
                     <h1 align="center">Blog #4</h1>
 
                     <p>
-                        This is a Blog Post for Homework Assignment #4.
-                        
+                        This is a Blog Post for Homework Assignment #4
                         <br>
                         This will be a demo for Homework Assignment #4
                         <br>
@@ -49,15 +48,98 @@
                         }
                     </code></pre>
                    
-                   <img src="images/VSSolutionsMVC.PNG" alt="A screenshot of the solution explorer in Visual Studio" width="300">
+                    <img src="images/VSSolutionsMVC.PNG" alt="A screenshot of the solution explorer in Visual Studio" width="300">
                    
                     <!--VS-->
                     <h3>
-                        Getting Started on the Actual Code
+                        A Review on Git
                     </h3>
                     
                     <p>
-                        To be continued...
+                        To change branches: <code>git checkout branchname</code><br>
+                        To change to a new branch: <code>git checkout -b newbranch</code><br>
+                        To push to the branch: <code>git push origin branchname</code><br>
+                        To set the url of the repo: <code>git remote set-url origin github.com/url</code><br>
+                    </p>
+                    <p>
+                        Though this is all stuff we've covered before, but I like double checking that I have it all compiled in one place.
+                    </p>
+                    
+                    <h3>GET Forms / The Mile Converter</h3>
+                    <p>
+                        I decided to start with the mile converter. Initially I just copied the format given to us by the example (it's nice not having to design something! I get way too caught up on it). After I had all the base elements down, I just ensured that the form's method was GET.
+                    </p>
+                    
+                    <p>
+                        This gives us query strings in the url. Using those, we can extract the user submitted info and do some calculations. For this part of the problem, we wanted to access them using the Request object (as opposed to paramaters, see the POST section). Getting them is pretty easy, in the controller object you can just check for query strings using their names.
+                    </p>
+                    
+                        <pre><code class="language-csharp">
+                            string givenunit = Request.QueryString["unit"];
+                            double givenmiles = Convert.ToDouble(Request.QueryString["miles"]);
+                        </code></pre>
+                    
+                    <p>
+                        I needed to add a bit at the bottom of the page if the user had made some kind of input and submitted it. To do that, you just need to use a bit of Razor. In this case I just needed to check if my calculation variable was empty, and if it wasn't, to append the sentence that showed the user the result. 
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        @if (ViewBag.message != null)
+                        {...}
+                    </code></pre>
+                    
+                    <h3>POST Forms / The Color Generator</h3>
+                    <p>
+                        This one felt a little more complex than the prior problem, but that's probably just because things that involve graphics tend to be a little bit tricker (mostly due to disuse for me). For this problem, we needed to let the user submit two hex color values, then mix those two colors up. In the process we also had to show squares of the color
+                    </p>
+                    
+                    <p>
+                        To begin, I had to make up the basis of the page. For this section of the assignment we were to use Razor to make the form. The formatting is a little different than the traditional html.
+                    </p>
+                    <pre><code class="language-csharp">
+                        @using (Html.BeginForm("ColorChooser", "Home", FormMethod.Post))
+                        {
+                            @Html.Label("firstcolor", "First Color")
+                            @Html.TextBox("firstcolor", null, htmlAttributes: new { @class = "form-control" })
+                        }
+                    </code></pre>
+                    
+                    <p>
+                        After getting the actual page elements down, I decided to initially focus on how I was going to break the colors up. There may have been a more elegant way to do it, but in the end, I broke up each hex number into three ints. After I had those, I used one of the functions provided to convert it to a color. In a move that felt a little redundant, I then translated it back to a hex color.
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        firstred = Convert.ToInt32(firstcolor.Substring(1, 2), 16);
+                        firstgreen = Convert.ToInt32(firstcolor.Substring(3, 2), 16);
+                        firstblue = Convert.ToInt32(firstcolor.Substring(5, 2), 16);
+                        first = Color.FromArgb(firstred,firstgreen,firstblue);
+                        firsthex = ColorTranslator.ToHtml(first);
+                    </code></pre>
+                    
+                    <p>
+                        I figured that I needed too anyways to help with adding the two colors together. The code for that was pretty straightforward as a result (add the reds, add the greens, add the blues, then turn that into it's own color object, then convert that to hex). To display the colors, I used an html canvas with the background color set to the hex colors that I generated.
+                    </p>
+                    
+                    <pre><code class="language-html">
+                        (forgot to copy it this go around)
+                    </code></pre>
+                    
+                    <p>
+                        In the process of all of this, I needed to access the user's input. I used Post instead of Get in this section, and also stored them as paramaters.
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        public ActionResult ColorChooser(string firstcolor, string secondcolor)
+                        {...}
+                    </code></pre>
+                    
+                    <p>
+                        Overall, it was fairly straightforward!
+                    </p>
+                    
+                    <h3>Validation</h3>
+                    <p>
+                        I decided to get the bulk of the work done on both pages before going back and double checking for validation.
                     </p>
                     
                     <!--/// &lt;summary>-->
