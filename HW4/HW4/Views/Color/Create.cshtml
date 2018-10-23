@@ -9,7 +9,7 @@
             <p>
                 Please enter colors in HTML hexadecimal format (#AABBCC)
             </p>
-            @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+            @using (Html.BeginForm("Create", "Color", FormMethod.Post))
             {
                 @Html.Label("firstcolor", "First Color")
                 @Html.TextBox("firstcolor", "", htmlAttributes: new { @class = "form-control", pattern = "#[A-F0-9]{2}[A-F0-9]{2}[A-F0-9]{2}"})
