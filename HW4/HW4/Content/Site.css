@@ -14,6 +14,11 @@
     margin-bottom: 30px;
 }
 
+#result {
+    color: #9e0000;
+    font-size: 20px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
