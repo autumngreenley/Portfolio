@@ -21,6 +21,7 @@ namespace HW4.Controllers
             {
                 ViewBag.blank = true;
             }
+            
             Color first = Color.FromName("Black");
             Color second = Color.FromName("Black");
             Color third = Color.FromName("Black");
@@ -62,6 +63,7 @@ namespace HW4.Controllers
             thirdgreen = firstgreen + secondgreen;
             thirdblue = firstblue + secondblue;
 
+            //Since hex values for color cap out at 255, gotta make sure nothing's overflowing
             if(thirdred>255)
             {
                 thirdred = 255;
