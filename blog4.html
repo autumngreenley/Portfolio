@@ -70,13 +70,26 @@
                         I decided to start with the mile converter. Initially I just copied the format given to us by the example (it's nice not having to design something! I get way too caught up on it). After I had all the base elements down, I just ensured that the form's method was GET.
                     </p>
                     
-                    <pre><code>
-                        
-                    </code></pre>
+                    <p>
+                        This gives us query strings in the url. Using those, we can extract the user submitted info and do some calculations. For this part of the problem, we wanted to access them using the Request object (as opposed to paramaters, see the POST section). Getting them is pretty easy, in the controller object you can just check for query strings using their names.
+                    </p>
+                    
+                        <pre><code class="language-csharp">
+                            string givenunit = Request.QueryString["unit"];
+                            double givenmiles = Convert.ToDouble(Request.QueryString["miles"]);
+                        </code></pre>
                     
                     <p>
-                        This gives us query strings in the url. Using those, we can extract the user submitted info and do some calculations.
+                        I needed to add a bit at the bottom of the page if the user had made some kind of input and submitted it. To do that, you just need to use a bit of Razer. In this case I just needed to check if my calculation variable was empty, and if it wasn't, to append the sentence that showed the user the result. 
                     </p>
+                    
+                    <pre><code class="language-csharp">
+                        @if (ViewBag.message != null)
+                        {...}
+                    </code></pre>
+                    
+                    <h3>POST Forms</h3>
+                    <p>To be continued...</p>
                     
                     <!--/// &lt;summary>-->
                     <!--Navigate back to the portfolio-->
