@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Drawing;
 
 namespace HW4.Controllers
 {
@@ -14,8 +15,9 @@ namespace HW4.Controllers
             return View();
         }
 
-        public ActionResult ColorChooser()
+        public ActionResult ColorChooser(string firstcolor, string secondcolor)
         {
+            Color first = Color.FromArgb(328839);
             return View();
         }
 
