@@ -14,11 +14,6 @@ namespace HW4.Controllers
             return View();
         }
 
-        public ActionResult ColorChooser()
-        {
-            return View();
-        }
-
         public ActionResult MileToMetric()
         {
             return View();
