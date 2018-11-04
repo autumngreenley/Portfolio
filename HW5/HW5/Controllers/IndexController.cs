@@ -13,5 +13,10 @@ namespace HW5.Controllers
         {
             return View();
         }
+
+        public ActionResult RequestForm()
+        {
+            return View();
+        }
     }
 }

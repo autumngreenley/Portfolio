@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Tennant Request Form";
+}
+
+<h2>Tennant Request Form</h2>
+
+@using (Html.BeginForm("RequestForm", "Index", FormMethod.Post))
+{
+    @Html.Label("firstname", "First Name")
+    @Html.TextBox("firstname", null, htmlAttributes: new { @class = "form-control", required = "required" })
+
+    @Html.Label("lastname", "Last Name")
+    @Html.TextBox("lastname", null, htmlAttributes: new { @class = "form-control", required = "required" })
+
+    @Html.Label("phone", "Phone Number (In the form xxx-xxx-xxxx)")
+    @Html.TextBox("phone", null, htmlAttributes: new { @class = "form-control", type="tel", required = "required", pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" })
+    
+    @Html.Label("aptname", "Apartment Name")
+    @Html.TextBox("aptname", null, htmlAttributes: new { @class = "form-control", required = "required" })
+
+    @Html.Label("unitnum", "Unit Number")
+    @Html.TextBox("unitnum", null, htmlAttributes: new { @class = "form-control", type = "number", min=1, required = "required" })
+    <br />
+    @Html.TextArea("explain", "Explanation of request, maintenance required, or complaint. Please be specific.", htmlAttributes: new { @class="form-control", required = "required" })
+    <br />
+    <button type="submit">Submit</button>
+}
