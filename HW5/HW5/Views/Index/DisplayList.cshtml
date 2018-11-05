@@ -25,6 +25,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Explain)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Timestamps)
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -47,6 +50,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Explain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timestamps)
             </td>
         </tr>
 

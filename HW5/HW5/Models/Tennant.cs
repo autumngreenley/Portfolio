@@ -45,13 +45,13 @@ namespace HW5.Models
         [Display(Name = "Their Problem")]
         public string Explain { get; set; }
 
-        public System.DateTime Timestamp
+        [Required]
+        [Display(Name ="Time Submitted")]
+        public System.DateTime Timestamps { get;  set; }
+
+        public void Dated()
         {
-            get
-            {
-                System.DateTime date = DateTime.Today;
-                return date;
-            }
+            Timestamps = System.DateTime.Now;
         }
 
         public override string ToString()
