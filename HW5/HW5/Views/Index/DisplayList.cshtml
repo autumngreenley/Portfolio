@@ -26,35 +26,48 @@
             @Html.DisplayNameFor(model => model.Explain)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Permission)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Timestamps)
         </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apartment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Explain)
+        </td>
+        <td>
+            @if (Html.DisplayFor(modelItem => item.Permission).ToString() == "0")
+            {
+                @Html.Raw("No")
+            }
+            else
+            {
+                @Html.Raw("Yes")
+            }
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apartment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitNum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Explain)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Timestamps)
-            </td>
-        </tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Timestamps)
+        </td>
+    </tr>
 
     }
  </table>

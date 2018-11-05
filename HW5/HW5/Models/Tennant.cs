@@ -4,15 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-/*
-string firstname
-string lastname
-string phone
-string apartment
-int unitnum
-string explain
-*/
-
 namespace HW5.Models
 {
     public class Tennant
@@ -20,8 +11,7 @@ namespace HW5.Models
         [Key]
         public int ID { get; set; }
 
-        [Required]
-        [StringLength(20)]
+        [Required, StringLength(20)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
@@ -46,17 +36,11 @@ namespace HW5.Models
         public string Explain { get; set; }
 
         [Required]
+        [Display(Name = "Permission to Enter Apartment")]
+        public int Permission { get; set; }
+
+        [Required]
         [Display(Name ="Time Submitted")]
         public System.DateTime Timestamps { get;  set; }
-
-        public void Dated()
-        {
-            Timestamps = System.DateTime.Now;
-        }
-
-        public override string ToString()
-        {
-            return $"{base.ToString()}: {FirstName} {LastName}";
-        }
     }
 }
