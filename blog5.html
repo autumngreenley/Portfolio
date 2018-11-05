@@ -22,9 +22,9 @@
                     <p>
                         This is a Blog Post for Homework Assignment #5
                         <br>
-                        This will be a demo for Homework Assignment #5
+                        This will be a video demo for Homework Assignment #5
                         <br>
-                        This is a <a href="https://github.com/autumngreenley/portfolio/tree/form/HW5/HW5" target="_blank">Repo</a> for Homework Assignment #5
+                        This is a <a href="https://github.com/autumngreenley/portfolio/tree/master/HW5/HW5" target="_blank">Repo</a> for Homework Assignment #5
                         <br>
                     </p>
                     
@@ -32,12 +32,92 @@
                     
                     <!--Setting up-->
                     <h3>
-                        ASP.NET MVC Setup
+                        General Setup
                     </h3>
                     <p>
-                        To be continued...
+                        Overall, getting started on this assignment was basically the same as Assignment #4. Make a basic MVC document in Visual Studio, get ready to add in links to other pages, etc. After getting the home page set up, I decided that I was going to start with getting the HTML form setup down. Once again, this was basically the exact same as last week. Use the html helpers to set up the form, make sure you have all of the boxes and the names are right, and that's that. With all of the basic standard stuff down, I couldn't really procrastinate the database stuff any further.
                     </p>
                     
+                    <h3>
+                        Database Stuff
+                    </h3>
+                    <p>
+                        Thankfully, I took the database class just last term more or less. So I wasn't entirely without hope as far as understanding things went. The first thing I did was copy over the up and down .sql files, looking at the general sort of format and content that we wanted.
+                    </p>
+                    <p>
+                        Basically, we want some creation code...
+                    </p>
+                    
+                    <pre><code class="language-sql">
+                        CREATE TABLE [dbo].[Tennants]
+                        (
+                            [ID]		INT IDENTITY (1,1)	NOT NULL,
+                            [FirstName]	NVARCHAR(20)		NOT NULL,
+                            [UnitNum]	INT					NOT NULL,
+                            [Timestamps] DATETIME			NOT NULL
+
+                            CONSTRAINT [PK_dbo.Tennants] PRIMARY KEY CLUSTERED ([ID] ASC)
+                        );
+                    </code></pre>
+                    
+                    <p>
+                        And some seed code...
+                    </p>
+                    
+                    <pre><code class="language-sql">
+                        INSERT INTO [dbo].[Tennants] (FirstName, LastName, Phone, Apartment, UnitNum, Explain, Permission, Timestamps) VALUES
+                            ('Jim','Johnson','541-555-5555','A','1','Washing Machine Broke','0','2000-10-31 12:11:11'),
+                            ...
+                        GO
+                    </code></pre>
+                    
+                    <p>
+                        Then when we're done with all of that, some teardown code.
+                    </p>
+                    
+                    <pre><code class="language-sql">
+                        DROP TABLE [dbo].[Tennants];
+                        delete FROM [dbo].[__MigrationHistory];
+                    </code></pre>
+                    
+                    <p>
+                        (Though the line about the migration history table shouldn't have always been needed, when I didn't have it it would ocassionally cause me some issues.)
+                    </p>
+                    
+                    <p>
+                        After finishing up the .sql files, I figured the next step was to adapt it into C#. Not particularly difficult, I just made a file called 'Tenant.cs' and basically 'copied over' the sql stuff. In the end, it kind of followed this format.
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        namespace HW5.Models
+                        {
+                            public class Tennant
+                            {
+                                [Key]
+                                public int ID { get; set; }
+
+                                [Required, StringLength(20)]
+                                [Display(Name = "First Name")]
+                                public string FirstName { get; set; }
+
+                                [Required]
+                                [Display(Name = "Unit Number")]
+                                public int UnitNum { get; set; }
+
+                                [Required]
+                                [Display(Name ="Time Submitted")]
+                                public System.DateTime Timestamps { get;  set; }
+                                
+                                ...
+                            }
+                        }
+                    </code></pre>
+                    
+                    <p>
+                        Basically just [Special Attributes] and the data type. With all of that written out and done, I knew I had a semi-functional database. At the moment, the form didn't do anything with it. So in a true pinball fashion, I went back to that.
+                    </p>
+                    
+                    <h3>Connecting the Dots</h3>
                     <!--<pre><code class="language-csharp">
                         public ActionResult Index()
                         {
