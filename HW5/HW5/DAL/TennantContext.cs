@@ -9,7 +9,7 @@ namespace HW5.DAL
 {
     public class TennantContext : DbContext
     {
-        public TennantContext() : base("name=SecondTry")
+        public TennantContext() : base("name=FirstTry")
         {
 
         }

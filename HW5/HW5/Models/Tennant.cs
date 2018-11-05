@@ -28,22 +28,22 @@ namespace HW5.Models
         public string LastName { get; set; }
 
         [Required]
-        public string phone { get; set; }
+        public string Phone { get; set; }
 
         [Required]
-        public string apartment { get; set; }
+        public string Apartment { get; set; }
 
         [Required]
-        public int unitnum { get; set; }
+        public int Unitnum { get; set; }
 
         [Required]
-        public string explain { get; set; }
+        public string Explain { get; set; }
 
-        public int timestamp
+        public System.DateTime Timestamp
         {
             get
             {
-                var date = DateTime.Today;
+                System.DateTime date = DateTime.Today;
                 return date;
             }
         }
