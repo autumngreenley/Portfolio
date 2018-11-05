@@ -34,7 +34,7 @@ namespace HW5.Models
         public string Apartment { get; set; }
 
         [Required]
-        public int Unitnum { get; set; }
+        public int UnitNum { get; set; }
 
         [Required]
         public string Explain { get; set; }
@@ -48,9 +48,9 @@ namespace HW5.Models
             }
         }
 
-        /*public override string ToString()
+        public override string ToString()
         {
-            return $"{base.ToString()}: {FirstName} {LastName} DOB = {DOB} Age = {Age}";
-        }*/
+            return $"{base.ToString()}: {FirstName} {LastName}";
+        }
     }
 }
