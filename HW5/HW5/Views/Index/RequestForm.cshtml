@@ -24,15 +24,8 @@
     <br />
     @Html.TextArea("Explain", "Explanation of request, maintenance required, or complaint. Please be specific.", htmlAttributes: new { @class = "form-control", required = "required" })
     <br />
-    @Html.Label("Permission", "Select here to give permission for the landlord (or rep) to enter your unit to perform the requested maintenance. We will call first.")
-    @Html.CheckBox("Permission", false, htmlAttributes: new { @class = "form-control" })
+    @Html.Label("Permission", "Select here to give permission for the landlord (or rep) to enter your unit to perform the requested maintenance. We will call first.")<br />
+    @Html.CheckBox("Permission", false, htmlAttributes: new { })
+    <br /><br />
     <button type="submit">Submit</button>
-}
-
-@if (ViewBag.Blank == false)
-{
-    <p>
-        Blah blah blah!
-        @ViewBag.Test
-    </p>
 }
