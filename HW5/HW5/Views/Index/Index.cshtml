@@ -3,13 +3,18 @@
     ViewBag.Title = "Home";
 }
 
-
 <div class="container">
     <div class="row">
         <div class="col-md-12" id="header">
             <h1>CS460 Homework #5</h1>
             <p>
                 Beginning to work with a database.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p>
+                Want to see the tennant's requests?
+                @Html.ActionLink("View it here", "DisplayList", "Index")
             </p>
         </div>
     </div>
