@@ -22,21 +22,27 @@ namespace HW5.Models
 
         [Required]
         [StringLength(20)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required, StringLength(20)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]
+        [Display(Name = "Phone Number")]
         public string Phone { get; set; }
 
         [Required]
+        [Display(Name = "Apartment Name")]
         public string Apartment { get; set; }
 
         [Required]
+        [Display(Name = "Unit Number")]
         public int UnitNum { get; set; }
 
         [Required]
+        [Display(Name = "Their Problem")]
         public string Explain { get; set; }
 
         public System.DateTime Timestamp
