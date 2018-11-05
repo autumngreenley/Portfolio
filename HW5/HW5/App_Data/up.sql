@@ -8,15 +8,16 @@ CREATE TABLE [dbo].[Tennants]
 	[Apartment]	NVARCHAR(20)		NOT NULL,
 	[UnitNum]	INT					NOT NULL,
 	[Explain]	NVARCHAR(1000)		NOT NULL,
+	[Permission] INT				NOT NULL,
 	[Timestamps] DATETIME			NOT NULL
 
 	CONSTRAINT [PK_dbo.Tennants] PRIMARY KEY CLUSTERED ([ID] ASC)
 );
 
-INSERT INTO [dbo].[Tennants] (FirstName, LastName, Phone, Apartment, UnitNum, Explain, Timestamps) VALUES
-	('Jim','Johnson','541-555-5555','A','1','Washing Machine Broke','2000-10-31 12:11:11'),
-	('Sue','Suzanne','541-555-5555','B','2','Cooking Machine Broke','2001-10-31 12:11:11'),
-	('Mira','Kuzak','541-555-5555','C','3','Stove Machine Broke','2002-10-31 12:11:11'),
-	('Juan','Nowell','541-555-5555','D','4','Ceiling Machine Broke','2003-10-31 12:11:11'),
-	('Naomi','Jones','541-555-5555','E','5','Fridge Machine Broke','2004-10-31 12:11:11')
+INSERT INTO [dbo].[Tennants] (FirstName, LastName, Phone, Apartment, UnitNum, Explain, Permission, Timestamps) VALUES
+	('Jim','Johnson','541-555-5555','A','1','Washing Machine Broke','0','2000-10-31 12:11:11'),
+	('Sue','Suzanne','541-555-5555','B','2','Cooking Machine Broke','1','2001-10-31 12:11:11'),
+	('Mira','Kuzak','541-555-5555','C','3','Stove Machine Broke','1','2002-10-31 12:11:11'),
+	('Juan','Nowell','541-555-5555','D','4','Ceiling Machine Broke','1','2003-10-31 12:11:11'),
+	('Naomi','Jones','541-555-5555','E','5','Fridge Machine Broke','0','2004-10-31 12:11:11')
 GO
