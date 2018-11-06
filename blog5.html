@@ -22,7 +22,7 @@
                     <p>
                         This is a Blog Post for Homework Assignment #5
                         <br>
-                        This will be a video demo for Homework Assignment #5
+                        This is a <a href="http://my.mixtape.moe/envhgt.mp4">Video Demo</a> for Homework Assignment #5
                         <br>
                         This is a <a href="https://github.com/autumngreenley/portfolio/tree/master/HW5/HW5" target="_blank">Repo</a> for Homework Assignment #5
                         <br>
@@ -37,6 +37,9 @@
                     <p>
                         Overall, getting started on this assignment was basically the same as Assignment #4. Make a basic MVC document in Visual Studio, get ready to add in links to other pages, etc. After getting the home page set up, I decided that I was going to start with getting the HTML form setup down. Once again, this was basically the exact same as last week. Use the html helpers to set up the form, make sure you have all of the boxes and the names are right, and that's that. With all of the basic standard stuff down, I couldn't really procrastinate the database stuff any further.
                     </p>
+                    
+                    <img src="images/5Home.PNG" width=500px>
+                    <img src="images/5Form.PNG" width=500px>
                     
                     <h3>
                         Database Stuff
@@ -117,7 +120,69 @@
                         Basically just [Special Attributes] and the data type. With all of that written out and done, I knew I had a semi-functional database. At the moment, the form didn't do anything with it. So in a true pinball fashion, I went back to that.
                     </p>
                     
+                    <img src="images/5List.PNG" width=500px>
+                    
                     <h3>Connecting the Dots</h3>
+                    
+                    <p>
+                        With my database constructed and my form made, the only real thing left to do was plug things in. I'm not sure if it's really the most elegant way of doing it, but basically I decided on the following:
+                    </p>
+                        <ul>
+                            <li>User clicks submit</li>
+                            <li>Form gets Post'd</li>
+                            <li>Valid data they entered gets added to the database (Take the data as parameters and stuff it into a Tennant object)</li>
+                            <li>User gets redirected to the database list</li>
+                        </ul>
+                    <p>
+                        The first part was the same as last week, but the last couple looked like this:
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        Tennant NewTennant = new Tennant();
+                        NewTennant.FirstName = FirstName;
+                        NewTennant.UnitNum = UnitNum ?? default(int);
+                        NewTennant.Timestamps = DateTime.Now;
+
+                        database.Tennants.Add(NewTennant);
+                        database.SaveChanges();
+
+                        return RedirectToAction("DisplayList");
+                    </code></pre>
+                    
+                    <p>
+                        It's pretty straightforward. Other than that, most of this assignment was just bug crushing and tweaking things (Initially I didn't notice the checkbox for permission, so I had to go back and add it. Which wouldn't have been that hard except I kept getting caught up in data type conversions and my database not connecting to the right server. Oops!)
+                    </p>
+                    
+                    <h4>Connection String and DAL</h4>
+                    <p>
+                        To make things like actually work, I also had to add a connection string to the Web.config file. 
+                    </p>   
+                       
+                       <pre><code class="language-csharp">  
+                        <connectionStrings>
+                            &lt;add name="FirstTry" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Autumn's Asus\Documents\HW\git\Homework 1\HW5\HW5\App_Data\Tennants.mdf;Integrated Security=True" providerName="System.Data.SqlClient" />
+                        </connectionStrings>
+                       </code></pre>
+                    <p>
+                        Aaaand make a DAL (Data Access Layer). A pretty empty file, but important.
+                    </p>
+                    <pre><code class="language-csharp">
+                        namespace HW5.DAL
+                        {
+                            public class TennantContext : DbContext
+                            {
+                                public TennantContext() : base("name=FirstTry")
+                                {}
+
+                                public virtual DbSet&lt;Tennant> Tennants { get; set; }
+                            }
+                        }
+                    </code></pre>
+                    
+                    <p>
+                        Normally I don't include code in it's entirety, but it would be hard to cut much out of that one.
+                    </p>
+                    
                     <!--<pre><code class="language-csharp">
                         public ActionResult Index()
                         {
