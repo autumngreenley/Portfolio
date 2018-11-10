@@ -1,14 +1,14 @@
-namespace HW6
+﻿namespace HW6.Models
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class WWI : DbContext
+    public partial class WWIContext : DbContext
     {
-        public WWI()
-            : base("name=WWI")
+        public WWIContext()
+            : base("name=WWIContext")
         {
         }
 

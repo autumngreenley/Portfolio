@@ -143,6 +143,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\WWIContext.cs" />
     <Compile Include="Models\BuyingGroup.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\ColdRoomTemperature.cs" />
@@ -184,7 +185,6 @@
     <Compile Include="Models\SystemParameter.cs" />
     <Compile Include="Models\TransactionType.cs" />
     <Compile Include="Models\VehicleTemperature.cs" />
-    <Compile Include="DAL\WWI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -216,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

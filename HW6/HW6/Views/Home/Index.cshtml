@@ -9,3 +9,8 @@
     @Html.TextBox("q", null)
     <button type="submit">Search!</button>
 }
+
+@if(ViewBag.message!=null)
+{
+    @ViewBag.message
+}
