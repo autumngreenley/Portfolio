@@ -18,7 +18,7 @@ namespace HW6.Controllers
             string query = Request.QueryString["q"];
             ViewBag.message = query;
             //return View();
-            return View(db.People.Where(p => p.FullName.ToUpper().Contains(query.ToUpper())).ToList());
+            return View(db.People.Where(p => p.FullName.ToLower().Contains(query.ToLower())).ToList());
         }
     }
 }
