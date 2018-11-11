@@ -23,7 +23,7 @@ else
         {
             <tr>
                 <td class="searched">
-                    @Html.ActionLink(@person.FullName, "?", "?")
+                    @Html.ActionLink(@person.FullName, "Details", "Home", new { id = person.PersonID },null)
                 </td>
             </tr>
         }
