@@ -22,7 +22,7 @@
                     <p>
                         This is a Blog Post for Homework Assignment #6
                         <br>
-                        This will be a for Homework Assignment #6
+                        This is a <a href="https://my.mixtape.moe/zwcjay.mp4">Video Demo</a> for Homework Assignment #6
                         <br>
                         This is a <a href="https://github.com/autumngreenley/portfolio/tree/master/HW6/HW6" target="_blank">Repo</a> for Homework Assignment #6
                         <br>
@@ -47,8 +47,102 @@
                     </p>
                     
                     <p>
-                        To do that, we have to (first of all) make sure that the DAL is actually named correctly (spoiler alert, it wasn't). After fixing that...
+                        To do that, we have to (first of all) make sure that the DAL is actually named correctly (spoiler alert, it wasn't). With that fixed, we pass the query to the database, searching through entries.
                     </p>
+                    
+                    <pre><code class="language-csharp">
+                        public ActionResult Index()
+                        {
+                            string query = Request.QueryString["q"];
+                            return View(db.People.Where(p => p.FullName.ToLower().Contains(query.ToLower())).ToList());
+                        }
+                    </code></pre>
+                    
+                    <p>
+                        The logic here is simple enough - look through the database of people and return anyone who has the substring in their full name. With that info returned the view, we make a table element for everyone that we have that matches the criteria. We also do a little bit of trickery where we add in the person's ID onto the end of the url so that it can go to their customized page. I also made sure that the page was able to handle no results and more than one result.
+                    </p>
+                      
+                    <pre><code class="language-csharp">
+                        &lt;table>
+                            @foreach (var person in Model)
+                            {
+                                &lt;tr>
+                                    &lt;td class="searched">
+                                        @Html.ActionLink(@person.FullName, "Details", "Home", new { id = person.PersonID },null)
+                                    &lt;/td>
+                                &lt;/tr>
+                            }
+                        &lt;/table>
+                    </code></pre>
+                            
+                    <img src="images/6NoResults.PNG" width=500px>
+                    <img src="images/6MultiResults.PNG" width=500px>
+                    
+                    <h3>Building the Details Page</h3>
+                    <p>
+                        This was relatively similar to a lot of the earlier assignments, basically just building a page and passing information into it. I'm not entirely sure if it's the most efficient way of doing things, but I just sent the customer information to the ViewModel and went from there.
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        Person user = db.People.Find(id);
+                        PersonViewModel vm = new PersonViewModel
+                        {
+                            FullName = user.FullName,
+                            Name = user.PreferredName,
+                            Phone = user.PhoneNumber,
+                            Fax = user.FaxNumber,
+                            Email = user.EmailAddress,
+                            MemberSince = user.ValidFrom
+                        };
+                    </code></pre>
+                    
+                    <pre><code class="language-csharp">
+                        @model HW6.Models.ViewModels.PersonViewModel
+                        ...
+                        @Html.DisplayNameFor(model => model.Name):&emsp;
+                        @Html.DisplayFor(model => model.Name)
+                    </code></pre>
+                    
+                    <img src="images/6Lily.PNG" width=500px>
+                    
+                    <h3>And, More Details</h3>
+                    <p>
+                        For the next part, we have to 1) check if the person is a primary contact person, then 2) supply additional information if they are. Poking around in the database for a while eventually revealed a decently quick way to check the first thing (<code class="language-csharp">if (user.Customers2.Count()>0)...</code>). Beyond that the additional information ranged from virtually identitical to the above, to coming up with weird connections between the databases.
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        vm.Orders = (customer.Orders.ToList()).Count;
+                        vm.GrossSales = customer.Orders.SelectMany(x => x.Invoices).SelectMany(x => x.InvoiceLines).Sum(x => x.ExtendedPrice);
+                        vm.GrossProfit = customer.Orders.SelectMany(x => x.Invoices).SelectMany(x => x.InvoiceLines).Sum(x => x.LineProfit);
+                        ...
+                        vm.TopTen=customer.Orders.SelectMany(x => x.Invoices).SelectMany(x => x.InvoiceLines).OrderByDescending(z => z.LineProfit).Take(10).ToList();
+                    </code></pre>
+                    
+                    <p>
+                        It's a bit of a shift from normal SQL, but as long as you're able to keep a grasp on the database's tables and what's connected it's not too bad. Beyond that, the table is laid out as it has been in the past.
+                    </p>
+                    
+                    <pre><code class="language-csharp">
+                        &lt;table>
+                            &lt;thead>
+                                &lt;tr>
+                                    &lt;th>Stock Item ID&lt;/th>
+                                    ...
+                                &lt;/tr>
+                            &lt;/thead>
+                            &lt;tbody>
+                                @foreach (var item in Model.TopTen)
+                                {
+                                    &lt;tr>
+                                        ...
+                                        &lt;td>@Html.DisplayFor(model => item.Invoice.Person4.FullName)&lt;/td>
+                                    &lt;/tr>
+                                }
+                            &lt;/tbody>
+                        &lt;/table>
+                    </code></pre>
+                    
+                    <img src="images/6Details.PNG" width=500px>
                     
                     <!--<pre><code class="language-csharp">
                         public ActionResult Index()
