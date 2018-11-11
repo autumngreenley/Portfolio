@@ -44,8 +44,17 @@ namespace HW6.Models.ViewModels
 
         //Purchase History
 
+        [DisplayName("Orders")]
         public int Orders { get; set; }
-        public float GrossSales { get; set; }
-        public float GrossProfit { get; set; }
+
+        [DisplayName("Gross Sales")]
+        
+        public decimal GrossSales { get; set; }
+
+        [DisplayName("Gross Profit")]
+        public decimal GrossProfit { get; set; }
+
+        [DisplayName("Invoices")]
+        public List<InvoiceLine> TopTen { get; set; }
     }
 }

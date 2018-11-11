@@ -44,12 +44,52 @@
                     @Html.DisplayNameFor(model => model.CompanyFax):&emsp; &emsp;&emsp; &emsp;&emsp;&emsp;
                     @Html.DisplayFor(model => model.CompanyFax)
                     <br />
-                    @Html.DisplayNameFor(model => model.CompanyWebsite):&emsp; &emsp;&emsp; &emsp;
+                    @Html.DisplayNameFor(model => model.CompanyWebsite):&emsp; &emsp; &emsp; &emsp;
                     <a href="http://@Html.DisplayFor(model => model.CompanyWebsite)">@Html.DisplayFor(model => model.CompanyWebsite)</a>
                     <br />
-                    @Html.DisplayNameFor(model => model.CompanyMemberSince):&emsp;&emsp;
+                    @Html.DisplayNameFor(model => model.CompanyMemberSince):&emsp;&nbsp;&nbsp;&nbsp;
                     @Html.DisplayFor(model => model.CompanyMemberSince)
                 </div>
+                <br />
+                <div class="searchresults">
+                    <h4 id="nameheader">Purchase History Summary</h4>
+                    <hr id="detaildivider" />
+                    @Html.DisplayNameFor(model => model.Orders):&emsp;&emsp; &emsp; &emsp;&emsp;
+                    @Html.DisplayFor(model => model.Orders)
+                    <br />
+                    @Html.DisplayNameFor(model => model.GrossSales):&emsp;&emsp; &emsp;
+                    $@Html.DisplayFor(model => model.GrossSales)
+                    <br />
+                    @Html.DisplayNameFor(model => model.GrossProfit):&emsp; &emsp; &emsp;
+                    $@Html.DisplayFor(model => model.GrossProfit)
+                </div>
+                <br />
+                <div class="searchresults">
+                    <h4 id="nameheader">Item's Purchased</h4>
+                    <hr id="detaildivider" />
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Stock Item ID</th>
+                                <th>Description</th>
+                                <th>Line Profit</th>
+                                <th>Sales Person</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.TopTen)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(model => item.StockItemID)</td>
+                                    <td>@Html.DisplayFor(model => item.Description)</td>
+                                    <td>$@Html.DisplayFor(model => item.LineProfit)</td>
+                                    <td>@Html.DisplayFor(model => item.Invoice.Person4.FullName)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <br />
             }
         </div>
         <div class="col-md-3">

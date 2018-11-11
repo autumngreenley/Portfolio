@@ -4,13 +4,14 @@
     ViewBag.Title = "Home";
 }
 
-<h2>Home</h2>
-
-@using (Html.BeginForm("Index", "Home", FormMethod.Get))
-{
-    @Html.TextBox("q", null)
-    <button type="submit">Search!</button>
-}
+<br />
+<h2 align="center">Client Search</h2>
+<div align="center">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        @Html.TextBox("q", null)<button type="submit">Search!</button>
+    }
+</div>
 <br />
 
 @if (ViewBag.message!=null && Model.Count()==0)

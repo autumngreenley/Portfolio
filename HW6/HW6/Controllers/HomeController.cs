@@ -47,6 +47,14 @@ namespace HW6.Controllers
                 vm.CompanyFax = customer.FaxNumber;
                 vm.CompanyWebsite = customer.WebsiteURL;
                 vm.CompanyMemberSince = customer.ValidFrom;
+
+                //Orders
+                vm.Orders = (customer.Orders.ToList()).Count;
+                vm.GrossSales = customer.Orders.SelectMany(x => x.Invoices).SelectMany(x => x.InvoiceLines).Sum(x => x.ExtendedPrice);
+                vm.GrossProfit = customer.Orders.SelectMany(x => x.Invoices).SelectMany(x => x.InvoiceLines).Sum(x => x.LineProfit);
+
+                //Invoices
+                vm.TopTen=customer.Orders.SelectMany(x => x.Invoices).SelectMany(x => x.InvoiceLines).OrderByDescending(z => z.LineProfit).Take(10).ToList();
             }
 
             return View(vm);
