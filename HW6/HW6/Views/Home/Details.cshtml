@@ -3,28 +3,54 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
+<br />
 <div class="container">
     <div class="row">
-        <div class="col-md-9" id="searchresults">
-            <h4 id="nameheader">@Html.DisplayFor(model => model.FullName)</h4>
-            <hr id="detaildivider">
+        <div class="col-md-9">
+            <div class="searchresults">
+                <h4 id="nameheader">@Html.DisplayFor(model => model.FullName)</h4>
+                <hr id="detaildivider">
 
-            @Html.DisplayNameFor(model => model.Name):&emsp;
-            @Html.DisplayFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.Name):&emsp;
+                @Html.DisplayFor(model => model.Name)
+                <br />
+                @Html.DisplayNameFor(model => model.Phone):&emsp; &emsp;&emsp;&emsp;&emsp;
+                @Html.DisplayFor(model => model.Phone)
+                <br />
+                @Html.DisplayNameFor(model => model.Fax):&emsp; &emsp;&emsp; &emsp;&emsp;&emsp;
+                @Html.DisplayFor(model => model.Fax)
+                <br />
+                @Html.DisplayNameFor(model => model.Email):&emsp; &emsp;&emsp; &emsp; &emsp;
+                <a href="mailto:@Html.DisplayFor(model => model.Email)">@Html.DisplayFor(model => model.Email)</a>
+                <br />
+                @Html.DisplayNameFor(model => model.MemberSince):&emsp;&emsp;
+                @Html.DisplayFor(model => model.MemberSince)
+
+                <br />
+                <br />
+            </div>
             <br />
-            @Html.DisplayNameFor(model => model.Phone):&emsp; &emsp;&emsp;&emsp;&emsp;
-            @Html.DisplayFor(model => model.Phone)
-            <br />
-            @Html.DisplayNameFor(model => model.Fax):&emsp; &emsp;&emsp; &emsp;&emsp;&emsp;
-            @Html.DisplayFor(model => model.Fax)
-            <br />
-            @Html.DisplayNameFor(model => model.Email):&emsp; &emsp;&emsp; &emsp; &emsp;
-            <a href="mailto:@Html.DisplayFor(model => model.Email)">@Html.DisplayFor(model => model.Email)</a>
-            <br />
-            @Html.DisplayNameFor(model => model.MemberSince):&emsp;&emsp;
-            @Html.DisplayFor(model => model.MemberSince)
+            @if (ViewBag.showmore == true)
+            {
+                <div class="searchresults">
+                    <h4 id="nameheader">Company Profile</h4>
+                    <hr id="detaildivider">
+                    @Html.DisplayNameFor(model => model.CompanyName):&emsp;
+                    @Html.DisplayFor(model => model.CompanyName)
+                    <br />
+                    @Html.DisplayNameFor(model => model.CompanyPhone):&emsp; &emsp;&emsp;&emsp;&emsp;
+                    @Html.DisplayFor(model => model.CompanyPhone)
+                    <br />
+                    @Html.DisplayNameFor(model => model.CompanyFax):&emsp; &emsp;&emsp; &emsp;&emsp;&emsp;
+                    @Html.DisplayFor(model => model.CompanyFax)
+                    <br />
+                    @Html.DisplayNameFor(model => model.CompanyWebsite):&emsp; &emsp;&emsp; &emsp;
+                    <a href="http://@Html.DisplayFor(model => model.CompanyWebsite)">@Html.DisplayFor(model => model.CompanyWebsite)</a>
+                    <br />
+                    @Html.DisplayNameFor(model => model.CompanyMemberSince):&emsp;&emsp;
+                    @Html.DisplayFor(model => model.CompanyMemberSince)
+                </div>
+            }
         </div>
         <div class="col-md-3">
             <img src="https://via.placeholder.com/200x250" />

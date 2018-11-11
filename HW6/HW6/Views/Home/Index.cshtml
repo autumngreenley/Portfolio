@@ -13,8 +13,11 @@
 }
 <br />
 
-@if (Model.Count() == 0)
+@if (ViewBag.message!=null && Model.Count()==0)
 {
+    <p>
+        Sorry, we don't have anyone by that name. Check your spelling?
+    </p>
 }
 else
 {

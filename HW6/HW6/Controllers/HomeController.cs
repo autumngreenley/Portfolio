@@ -18,12 +18,13 @@ namespace HW6.Controllers
         {
             string query = Request.QueryString["q"];
             ViewBag.message = query;
-            //return View();
             return View(db.People.Where(p => p.FullName.ToLower().Contains(query.ToLower())).ToList());
         }
 
         public ActionResult Details(int id)
         {
+            ViewBag.showmore = false;
+
             Person user = db.People.Find(id);
             PersonViewModel vm = new PersonViewModel
             {
@@ -35,7 +36,18 @@ namespace HW6.Controllers
                 MemberSince = user.ValidFrom
             };
 
-            
+            if (user.Customers2.Count()>0)
+            {
+                ViewBag.showmore = true;
+                int customerID = user.Customers2.FirstOrDefault().CustomerID;
+                Customer customer = db.Customers.Find(customerID);
+
+                vm.CompanyName = customer.CustomerName;
+                vm.CompanyPhone = customer.PhoneNumber;
+                vm.CompanyFax = customer.FaxNumber;
+                vm.CompanyWebsite = customer.WebsiteURL;
+                vm.CompanyMemberSince = customer.ValidFrom;
+            }
 
             return View(vm);
         }
