@@ -1,6 +1,54 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #000000;
+}
+
+button {
+    background-color: #e25a5a !important;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none !important;
+    padding: 5px;
+    color: #FFF;
+    box-shadow: 2px 2px 3px .5px #DDD;
+}
+
+input {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border: 1px #aaa solid;
+    height: 30px;
+    width: 100%;
+    box-shadow: 2px 2px 3px .5px #DDD;
+}
+
+th{
+    padding:10px !important;
+    border: 1px black solid !important;
+    background-color: #aaa;
+}
+
+td {
+    padding: 10px !important;
+    border: 1px black solid !important;
+}
+
+
+
+tr:nth-child(even) {
+    background: #DDD;
+}
+
+tr:nth-child(odd) {
+    background: #FFF;
+}
+
+#detaildivider {
+    background-color: black !important;
+    height: 1.5px !important;
+    border: 0 !important;
+    margin-top: 0px !important;
 }
 
 #bloo {
@@ -8,6 +56,29 @@
     border-color: #5F606F;
     color: #FFFFFF !important;
     font-size: 30px;
+}
+
+.searched {
+    background-color: #EEE;
+    color: #000000 !important;
+    width: 1% !important;
+    padding: 5px !important;
+    border-radius: 3px !important;
+    box-shadow: 0px 0px 0px 1px #AAAAAA;
+    margin: 30px !important;
+}
+
+.searchresults {
+    background-color: #F3F3F3 !important;
+    padding: 20px !important;
+    padding-top: 10px !important;
+    border: 1px black solid !important;
+}
+
+#nameheader{
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 0px !important;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,4 +93,3 @@ select,
 textarea {
     max-width: 280px;
 }
-
