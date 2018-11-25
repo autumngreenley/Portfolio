@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Internet Language Translator</h2>
+
+@Html.TextBox("Userstring", null, new { @class = "form-control", placeholder = "Start typing your message here...", onkeyup = "testing()" })
+
+@ViewBag.message
+<br /><br />
+Enter your name: <input type="text" id="fname" onkeyup="myFunction()">
+
+<script>
+    $("input").keyup(function () {
+        Document.ViewBag.message = "Wait";
+    });
+
+    function testing(){
+        Document.ViewBag.message = "Wait2";
+    }
+
+    function myFunction() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+</script>
