@@ -1,4 +1,3 @@
-
 CREATE TABLE [dbo].[Buyer]
 (
     ID			INT IDENTITY (1,1) NOT NULL,
