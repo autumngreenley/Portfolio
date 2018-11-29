@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Sell an Item";
+}
+
+<h2>Tennant Request Form</h2>
+
+@using (Html.BeginForm("ItemCreateForm", "Item", FormMethod.Post))
+{
+    @Html.Label("Name", "Item Name")
+    @Html.TextBox("Name", null, htmlAttributes: new { @class = "form-control", required = "required" })
+
+    @Html.Label("Description", "Item Description")
+    @Html.TextBox("Description", null, htmlAttributes: new { @class = "form-control", required = "required" })
+
+    @Html.Label("Seller", "Name of the Seller")
+    @Html.TextBox("Seller", null, htmlAttributes: new { @class = "form-control", required = "required" })
+    
+    <br /><br />
+    <button type="submit">Submit</button>
+}
