@@ -17,18 +17,26 @@ namespace HW8.DAL
         public virtual DbSet<Buyer> Buyers { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<Seller> Sellers { get; set; }
-        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            /*modelBuilder.Entity<Item>()
-                .HasForeignKey(e => e.SellerID);
+            Database.SetInitializer<AuctionContext>(null);
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Buyer>()
+                .HasMany(e => e.Bids)
+                .WithRequired(e => e.Buyer)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Bid>()
+            modelBuilder.Entity<Item>()
                 .HasMany(e => e.Bids)
-                .WithRequired(e => e.City)
-                .WillCascadeOnDelete(false);*/
+                .WithRequired(e => e.Item)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Seller>()
+                .HasMany(e => e.Items)
+                .WithRequired(e => e.Seller)
+                .WillCascadeOnDelete(false);
         }
     }
 }
