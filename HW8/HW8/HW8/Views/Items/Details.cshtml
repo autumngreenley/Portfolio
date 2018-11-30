@@ -1,4 +1,7 @@
-﻿@model HW8.Models.Item
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--<script src="~/Scripts/JavaScript.js"></script>-->
+
+@model HW8.Models.Item
 
 @{
     ViewBag.Title = "Item Details";
@@ -36,6 +39,7 @@
 
     </dl>
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")

@@ -33,6 +33,10 @@ namespace HW8.Controllers
             {
                 return HttpNotFound();
             }
+
+
+            //ViewBag.TopTen = customer.Orders.SelectMany(x => x.Invoices).SelectMany(x => x.InvoiceLines).OrderByDescending(z => z.LineProfit).Take(10).ToList();
+            ViewBag.NewBids = db.Bids.Where(x => x.ItemID == id).ToList();
             return View(item);
         }
 

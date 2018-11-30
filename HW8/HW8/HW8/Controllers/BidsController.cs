@@ -70,7 +70,7 @@ namespace HW8.Controllers
 
                 //db.Bids.Add(bid);
                 //db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
 
             ViewBag.BuyerID = new SelectList(db.Buyers, "ID", "Name", NewBid.BuyerID);
