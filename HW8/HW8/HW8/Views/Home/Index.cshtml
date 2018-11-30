@@ -1,7 +1,48 @@
-﻿
+﻿@model IEnumerable<HW8.Models.Bid>
+
 @{
     ViewBag.Title = "Home";
 }
 
 <h2>Reginald's Ancient Antiquities Auction House</h2>
 
+@Html.ActionLink("Create an Item", "Create", "Items")<br />
+@Html.ActionLink("View the Item List", "Index", "Items")<br /><br />
+
+@Html.ActionLink("Bid on an Item", "Create", "Bids")<br />
+
+
+<h3>Bids!</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Item ID:</th>
+            <th>Item Name: </th>
+            <th>Bidder Name: </th>
+            <th>Bid Price: </th>
+            <th>Timestamp: </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Item.ID)</td>
+                <td>@Html.ActionLink(item.Item.Name, "Details", "Items", new {id = item.Item.ID }, null)</td>
+                <td>@Html.DisplayFor(modelItem => item.Buyer.Name)</td>
+                <td>$@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>
+                    @if (item.Timestamp.Date == DateTime.Today)
+                    {
+                        @(string.Format("{0:T}", item.Timestamp))
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Timestamp)
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
