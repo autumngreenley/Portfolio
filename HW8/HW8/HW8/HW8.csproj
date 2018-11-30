@@ -119,9 +119,13 @@
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Bids\Create.cshtml" />
+    <Content Include="Views\Bids\Details.cshtml" />
+    <Content Include="Views\Bids\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Global.asax.cs">

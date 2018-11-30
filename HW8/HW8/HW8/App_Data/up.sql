@@ -55,7 +55,7 @@ INSERT INTO [dbo].[Item] (Name,Description,SellerID) VALUES
 ('Bob Dylan Love Poems'      ,'Five versions of an original unpublished, handwritten, love poem by Bob Dylan',3);
 
 INSERT INTO [dbo].[Bid] (ItemID,BuyerID, Price,Timestamp) VALUES
-(1,1,250000,'12/04/2017 09:04:22'),
-(2,2,95000 ,'12/04/2017 08:44:03');
+(1,1,250000, (CAST('12/04/2017 09:04:22' AS DATETIME))),
+(2,2,95000 ,(CAST('12/04/2017 08:44:03' AS DATETIME)));
 
 GO
