@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Blog #7</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="A portfolio page for Autumn Greenley">
+        <link href="prism.css" rel="stylesheet" />
+        <link rel="icon" 
+      type="image/png" 
+      href="images/TriangleIcon.ico">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div="container">
+           <div="row">
+               <div="col-md-12">
+                    <h1 align="center">Blog #7</h1>
+
+                    <p>
+                        This is a Blog Post for Homework Assignment #7
+                        <br>
+                        This will be a Video Demo for Homework Assignment #7
+                        <br>
+                        This is a <a href="https://github.com/autumngreenley/portfolio/tree/api" target="_blank">Repo</a> for Homework Assignment #7
+                        <br>
+                    </p>
+                    
+                    <hr>
+                    
+                    <!--Setting up-->
+                    <h3>
+                        Playing around with the API
+                    </h3>
+                    
+                    <p>
+                        Getting the key for giphy was fairly straightforward, it's nice that they make it so accessible for people. Playing around with PostMan (or with just the url) it was easy to understand the JSON data and see what was coming from where. There's a lot of options for the gifs (sizes, animated vs nonanimated, etc), which leaves a lot of room for personal choice about what version of a funny animal picture you prefer.
+                    </p>
+                    
+                    <h3>AJAX!</h3>
+                    <p>
+                        After getting familiarized with the API, I went and set up the Visual Studio project. It's a fairly small project (Only one view, very little formatting) so not a ton was needed on that front. I decided to start off by making a basic AJAX setup to print whatever the user types below the textbox.
+                    </p>
+                    <p>
+                        After I got that working well, I figured it was time to process that input a little. I figure that, with Javascript, we can add each char to an array (well, a string), then when space is pressed, put that string into another array and empty out the 'single word' array.
+                    </p>
+                    <p>
+                        From there, I pulled a list of 'important words' from github (a list for verbs, a list for adjectives, and a list for noun) and stored them all in their own arrays. Now, after space is pressed, it checks the entered word against those lists and figures out if it's anything interesting.
+                    </p>
+                    <p>
+                        The next order of business is...
+                    </p>
+                    <h3>Implementing The API</h3>
+                    <!--<pre><code class="language-csharp">
+                        public ActionResult Index()
+                        {
+                            return View();
+                        }
+                    </code></pre>-->
+                   
+                    <!--<img src="images/VSSolutionsMVC.PNG" alt="A screenshot of the solution explorer in Visual Studio" width="300">-->
+                    
+                    <!--/// &lt;summary>-->
+                    <!--Navigate back to the portfolio-->
+                    <hr>
+                    <p>
+                        <a href="index.html"> back to the portfolio</a>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        <script src="prism.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </body>
+</html>
