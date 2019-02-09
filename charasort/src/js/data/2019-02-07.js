@@ -192,7 +192,7 @@ dataSet[dataSetVersion].characterData = [
   },
     {
     name: "Hiroki Nanahara, Paranormal Investigator",
-    img: "f8kdJWj.png",
+    img: "nKQa18A.png",
     opts: {
       series: ["camp"],
       gender: ["nb"],
