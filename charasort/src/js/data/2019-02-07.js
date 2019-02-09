@@ -124,7 +124,7 @@ dataSet[dataSetVersion].characterData = [
     opts: {
       series: ["camp"],
       gender: ["f"],
-      status: ["v"]
+      status: ["m"]
     }
   },
     {
