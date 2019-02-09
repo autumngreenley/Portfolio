@@ -83,8 +83,8 @@ dataSet[dataSetVersion].options = [
 
 dataSet[dataSetVersion].characterData = [
   {
-    name: "April Whitedove",
-    img: "5xUo64p.png",
+    name: "April Whitedove, Gardener",
+    img: "2Jlt0AU.png",
     opts: {
       series: ["camp"],
       gender: ["f"],
@@ -92,8 +92,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Rei Retasu",
-    img: "Wj6VfLt.png",
+    name: "Rei Retasu, Prosthetist",
+    img: "5tNSLzA.png",
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -101,8 +101,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Rusty",
-    img: "FhgtQv2.png",
+    name: "Rusty, Forger",
+    img: "4TSkAkc.png",
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -110,8 +110,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Talor Sofbell",
-    img: "Iu6oJOR.png",
+    name: "Talor Sofbell, Snake Milker",
+    img: "CRJoX9K.png",
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -119,8 +119,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Yukine Kuran",
-    img: "6oQASkG.png",
+    name: "Yukine Kuran, Geisha",
+    img: "eJl8MLC.png",
     opts: {
       series: ["camp"],
       gender: ["f"],
@@ -128,8 +128,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Nogla the Mighty",
-    img: "QskGCT5.png",
+    name: "Nogla the Mighty, Mage",
+    img: "3Aj3uQU.png",
     opts: {
       series: ["camp"],
       gender: ["nb"],
@@ -137,8 +137,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Ferdinand Clark",
-    img: "iVGuMGP.png",
+    name: "Ferdinand Clark, Adventurer",
+    img: "5PQMcdz.png",
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -146,8 +146,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Tomoe Shige",
-    img: "eZxUrW8.png",
+    name: "Tomoe Shige, Shrine Maiden",
+    img: "rAp6pOo.png",
     opts: {
       series: ["camp"],
       gender: ["f"],
@@ -155,8 +155,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Tomomi Aizawa",
-    img: "ZPoTTED.png",
+    name: "Tomomi Aizawa, Microbiologist",
+    img: "wTdRHq9.png",
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -164,8 +164,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Sven Skarsgard",
-    img: "ACUncVm.png",
+    name: "Sven Skarsgard, Fisher",
+    img: "kHuBdkc.png", //Needs 
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -173,8 +173,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Aya Ito",
-    img: "o53bxDw.png",
+    name: "Aya Ito, Cosplayer",
+    img: "eIwkHDh.png",
     opts: {
       series: ["camp"],
       gender: ["nb"],
@@ -182,8 +182,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Hotaru Yang",
-    img: "lofUbBz.png",
+    name: "Hotaru Yang, Shock Jock",
+    img: "2qsQpaE.png",
     opts: {
       series: ["camp"],
       gender: ["f"],
@@ -191,8 +191,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Hiroki Nanahara",
-    img: "yX5D0IC.png",
+    name: "Hiroki Nanahara, Paranormal Investigator",
+    img: "f8kdJWj.png",
     opts: {
       series: ["camp"],
       gender: ["nb"],
@@ -200,8 +200,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Landon Edgemont",
-    img: "ouX1yrM.png",
+    name: "Landon Edgemont, Preschool Teacher",
+    img: "4mlfYjY.png",
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -209,8 +209,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Rosillia Eristrov",
-    img: "C6ZkdRn.png",
+    name: "Rosillia Eristrov, Chessman",
+    img: "41qcySQ.png",
     opts: {
       series: ["camp"],
       gender: ["f"],
@@ -218,8 +218,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Grell Scarda",
-    img: "OK9yTLL.png",
+    name: "Grell Scarda, Bird Watcher",
+    img: "qsdccgD.png", //Needs 
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -227,8 +227,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Aurelia Deanna",
-    img: "nZZzq0d.png",
+    name: "Aurelia Deanna, Sandwich Artist",
+    img: "bVF4hdW.png", //Needs 
     opts: {
       series: ["camp"],
       gender: ["f"],
@@ -236,8 +236,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Gerard Skarsgard",
-    img: "oi9Y12y.png",
+    name: "Gerard Skarsgard, Hunter",
+    img: "nElLSmf.png", //Needs 
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -245,8 +245,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Christopher Beauregard",
-    img: "X8wAM1M.png",
+    name: "Christopher Beauregarde, Prince",
+    img: "svngYLp.png", //Needs 
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -254,8 +254,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Keiichi Kiito",
-    img: "YS7b77d.png",
+    name: "Keiichi Kiito, Jeweler",
+    img: "ptCFCJE.png",
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -263,8 +263,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Ruri Kobayashi",
-    img: "ibqk9Qz.png",
+    name: "Ruri Kobayashi, Private Investigator",
+    img: "U2acPR8.png",
     opts: {
       series: ["camp"],
       gender: ["f"],
@@ -272,8 +272,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Seishou Kensei",
-    img: "1z12Yul.png",
+    name: "Seishou Kensei, Boxer",
+    img: "5sukxXM.png", //Needs 
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -281,8 +281,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Linette Boucher",
-    img: "REfscqt.png",
+    name: "Linette Boucher, Butcher",
+    img: "9SVcj8B.png",
     opts: {
       series: ["camp"],
       gender: ["f"],
@@ -290,8 +290,8 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Taro Mijumaru",
-    img: "MwCnoYk.png",
+    name: "Taro Mijumaru, Gourmet",
+    img: "f8kdJWj.png",
     opts: {
       series: ["camp"],
       gender: ["m"],
@@ -300,7 +300,7 @@ dataSet[dataSetVersion].characterData = [
   },
     //GATE
     {
-    name: "Jessie Chaisavanh",
+    name: "Jessie Chaisavanh, Dungeon Master",
     img: "1jXbydx.png",
     opts: {
       series: ["gate"],
@@ -309,7 +309,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Kekoa Palakiko",
+    name: "Kekoa Palakiko, Dodgeball Player",
     img: "6j3EdTu.png",
     opts: {
       series: ["gate"],
@@ -318,7 +318,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Borya",
+    name: "Borya, SHSL...?",
     img: "Y2f0ViC.png",
     opts: {
       series: ["gate"],
@@ -327,7 +327,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Mohan Laghari",
+    name: "Mohan Laghari, Yes Man",
     img: "yZU7UHF.png",
     opts: {
       series: ["gate"],
@@ -336,7 +336,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Austin Nisei",
+    name: "Austin Nisei, Alpha",
     img: "BmjLaGY.png",
     opts: {
       series: ["gate"],
@@ -345,7 +345,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Tigerlily Celestino",
+    name: "Tigerlily Celestino, Healer",
     img: "aXJ5R6g.png",
     opts: {
       series: ["gate"],
@@ -354,7 +354,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Tucker the Trucker",
+    name: "Tucker the Trucker, Trucker",
     img: "oTyIgBE.png",
     opts: {
       series: ["gate"],
@@ -363,7 +363,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Sven?",
+    name: "Sven?, Fisher...?",
     img: "9UNFXn7.png",
     opts: {
       series: ["gate"],
@@ -372,7 +372,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Randy Velvito",
+    name: "Randy Velvito, Ornithologist",
     img: "SkBXugt.png",
     opts: {
       series: ["gate"],
@@ -381,7 +381,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Eloise Bixel",
+    name: "Eloise Bixel, Storyteller",
     img: "JyWtOiz.png",
     opts: {
       series: ["gate"],
@@ -390,7 +390,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Sophie Glass",
+    name: "Sophie Glass, Psychologist",
     img: "KZTTSlZ.png",
     opts: {
       series: ["gate"],
@@ -399,7 +399,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Naguib Mustafa",
+    name: "Naguib Mustafa, Archaeologist",
     img: "EwqMPJP.png",
     opts: {
       series: ["gate"],
@@ -408,7 +408,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Nadeshiko Sasaki",
+    name: "Nadeshiko Sasaki, Demonologist",
     img: "sd8kaKx.png",
     opts: {
       series: ["gate"],
@@ -417,7 +417,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Lykke Sigurjónsdóttir",
+    name: "Lykke Sigurjónsdóttir, Tactician",
     img: "eBxqlHf.png",
     opts: {
       series: ["gate"],
@@ -426,7 +426,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Tenma Terada",
+    name: "Tenma Terada, Traceur",
     img: "MTtGt4K.png",
     opts: {
       series: ["gate"],
@@ -435,7 +435,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Truedy Talltale",
+    name: "Truedy Talltale, Journalist",
     img: "2hk9z2l.png",
     opts: {
       series: ["gate"],
@@ -444,7 +444,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Lisander of the Amazon",
+    name: "Lisander of the Amazon, Pet Detective",
     img: "cgXSly4.png",
     opts: {
       series: ["gate"],
@@ -453,7 +453,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Ishaan Varma",
+    name: "Ishaan Varma, Stunt Person",
     img: "NpFWHdr.png",
     opts: {
       series: ["gate"],
@@ -462,7 +462,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Judge James Martin",
+    name: "Judge James Martin, Judge",
     img: "Vsx3y5G.png",
     opts: {
       series: ["gate"],
@@ -471,7 +471,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Dr. Robert Ashfield",
+    name: "Dr. Robert Ashfield, Bioengineer",
     img: "5xU2Ehx.png",
     opts: {
       series: ["gate"],
@@ -480,7 +480,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Antonio Ferrrio Montez",
+    name: "Antonio Ferrrio Montez, Telenovela Store",
     img: "9vPTNJh.png",
     opts: {
       series: ["gate"],
@@ -489,7 +489,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Zeke Hellstrand",
+    name: "Zeke Hellstrand, Wood Carver",
     img: "48YYks2.png",
     opts: {
       series: ["gate"],
@@ -498,7 +498,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Jane Doe",
+    name: "Jane Doe, Cryptozoologist",
     img: "1550aEl.png",
     opts: {
       series: ["gate"],
@@ -507,7 +507,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Sushruta Ayurveda",
+    name: "Sushruta Ayurveda, Opthamologist",
     img: "FgZjG3k.png",
     opts: {
       series: ["gate"],
@@ -516,7 +516,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Bob Stanley",
+    name: "Bob Stanley, Basketball Player",
     img: "8cqgdaq.png",
     opts: {
       series: ["gate"],
@@ -526,7 +526,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "George O' Suilleabhain",
+    name: "George O' Suilleabhain, Dairy Farmer",
     img: "rnTHnzU.png",
     opts: {
       series: ["gate"],
@@ -535,7 +535,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Kasai Garasu",
+    name: "Kasai Garasu, Glass Blower",
     img: "K7wE5OV.png",
     opts: {
       series: ["gate"],
@@ -544,7 +544,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "The Empty",
+    name: "The Empty, Dental Assistant",
     img: "rmACk7B.png",
     opts: {
       series: ["gate"],
@@ -553,7 +553,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Esther",
+    name: "Esther, Carpenter",
     img: "3GFBxOv.png",
     opts: {
       series: ["gate"],
@@ -562,7 +562,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Kim Phuong Nguyen",
+    name: "Kim Phuong Nguyen, Watchmaker",
     img: "lO1NLvW.png",
     opts: {
       series: ["gate"],
@@ -571,7 +571,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Lorcan Cleary",
+    name: "Lorcan Cleary, Cobbler",
     img: "T7Nyfg3.png",
     opts: {
       series: ["gate"],
@@ -580,7 +580,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Robert the Basketball",
+    name: "Robert the Basketball, Basketball",
     img: "pbjTViM.png",
     opts: {
       series: ["gate"],
