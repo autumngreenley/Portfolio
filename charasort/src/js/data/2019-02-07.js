@@ -480,7 +480,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
     {
-    name: "Antonio Ferrrio Montez, Telenovela Store",
+    name: "Antonio Ferrrio Montez, Telenovela Star",
     img: "9vPTNJh.png",
     opts: {
       series: ["gate"],
